@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGameIO.Business", "src\My
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGameIO.Data", "src\MyGameIO.Data\MyGameIO.Data.csproj", "{46D90099-13FA-416E-B7B2-4B668CE9858E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGameIO.Api", "src\MyGameIO.Api\MyGameIO.Api.csproj", "{A131B913-3B6D-4CC2-9906-1FD0D94E0D42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGameIO.Api", "src\MyGameIO.Api\MyGameIO.Api.csproj", "{A131B913-3B6D-4CC2-9906-1FD0D94E0D42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
