@@ -11,15 +11,18 @@ COPY src/MyGameIO.Data/MyGameIO.Data.csproj src/MyGameIO.Data/
 RUN dotnet restore src/MyGameIO.Api/MyGameIO.Api.csproj
 RUN dotnet restore src/MyGameIO.Business/MyGameIO.Business.csproj
 RUN dotnet restore src/MyGameIO.Data/MyGameIO.Data.csproj
+#
+#WORKDIR /src
+#COPY src/MyGameIO.Api/MyGameIO.Api.csproj src/MyGameIO.Api/
+#COPY src/MyGameIO.Business/MyGameIO.Business.csproj src/MyGameIO.Business/
+#COPY src/MyGameIO.Data/MyGameIO.Data.csproj src/MyGameIO.Data/
+#RUN dotnet build src/MyGameIO.Api/MyGameIO.Api.csproj -c Release -o /app
+#RUN dotnet build src/MyGameIO.Business/MyGameIO.Business.csproj -c Release -o /app
+#RUN dotnet build src/MyGameIO.Data/MyGameIO.Data.csproj -c Release -o /app
 
-COPY . .
-WORKDIR /app
-RUN dotnet build src/MyGameIO.Api/MyGameIO.Api.csproj -c Release -o /app
-RUN dotnet build src/MyGameIO.Business/MyGameIO.Business.csproj -c Release -o /app
-RUN dotnet build src/MyGameIO.Data/MyGameIO.Data.csproj -c Release -o /app
-
+COPY . . 
 FROM build AS publish
-RUN dotnet publish -c Release -o /app
+RUN dotnet publish MyGameIO.Api/MyGameIO.Api.csproj --no-restore -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
