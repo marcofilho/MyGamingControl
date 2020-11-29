@@ -79,15 +79,21 @@ namespace MyGameIO.Business.Services
 
         public async Task<bool> DevolverJogo(Jogo jogo, Amigo amigo)
         {
-            if (!amigo.Jogos.Contains(jogo))
+            if (amigo.Jogos == null || amigo.Jogos.Count < 1)
             {
-                Notificar("Esse jogo não encontra-se emprestado para " + amigo.Nome + "!");
+                Notificar("Esse amigo não possue jogos para serem devolvidos!");
                 return false;
             }
 
             if (!await _amigoRepository.FindJogoEmprestado(jogo))
             {
                 Notificar("Esse jogo não encontra-se emprestado!");
+                return false;
+            }
+
+            if (!amigo.Jogos.Contains(jogo))
+            {
+                Notificar("Esse jogo não encontra-se emprestado para " + amigo.Nome + "!");
                 return false;
             }
 

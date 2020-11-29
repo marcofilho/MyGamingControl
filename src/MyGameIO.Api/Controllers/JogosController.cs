@@ -129,10 +129,10 @@ namespace MyGameIO.Api.Controllers
 
             if (jogo == null || amigo == null) return NotFound();
 
-            await _jogoService.EmprestarJogo(jogo, amigo);
-            await _amigoService.EmprestarJogo(jogo, amigo);
+            var retorno = await _jogoService.EmprestarJogo(jogo, amigo);
+            if (retorno) await _amigoService.EmprestarJogo(jogo, amigo);
 
-            return CustomResponse("Jogo emprestado com sucesso!");
+            return CustomResponse();
         }
 
         [HttpPost, Route("DevolverJogo/{amigoId:guid}/{jogoId:guid}")]
@@ -146,10 +146,10 @@ namespace MyGameIO.Api.Controllers
 
             if (jogo == null || amigo == null) return NotFound();
 
-            await _jogoService.DevolverJogo(jogo, amigo);
-            await _amigoService.DevolverJogo(jogo, amigo);
+            var retorno = await _jogoService.DevolverJogo(jogo, amigo);
+            if (retorno) await _amigoService.DevolverJogo(jogo, amigo);
 
-            return CustomResponse("Jogo devolvido com sucesso!");
+            return CustomResponse();
 
         }
 
