@@ -1,0 +1,30 @@
+version: '3.5'
+
+networks:
+    localdev:
+        name: localdev
+        
+services:
+    main-api:
+        build: MyGameIO.Api/
+        restart: always
+        ports:
+            - "7000:80"
+        depends-on:
+            - db-server
+        networks:
+            - localdev
+    
+    db-server:
+        image: microsoft/mssql-server-linux:2017-latest
+        container_name: db-server
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=Marco1234
+            - MSSQL_TCP_PORT=1433
+        ports:
+            - "1400:1433"
+        networks:
+            - localdev
+            
+        
