@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGameIO.Data", "src\MyGame
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGameIO.Api", "src\MyGameIO.Api\MyGameIO.Api.csproj", "{A131B913-3B6D-4CC2-9906-1FD0D94E0D42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGameIO.Tests", "src\MyGameIO.Test\Tests\MyGameIO.Tests.csproj", "{31F8F1F4-D350-449D-B2AA-D9A4B9B8EA8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A131B913-3B6D-4CC2-9906-1FD0D94E0D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A131B913-3B6D-4CC2-9906-1FD0D94E0D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A131B913-3B6D-4CC2-9906-1FD0D94E0D42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F8F1F4-D350-449D-B2AA-D9A4B9B8EA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F8F1F4-D350-449D-B2AA-D9A4B9B8EA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F8F1F4-D350-449D-B2AA-D9A4B9B8EA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F8F1F4-D350-449D-B2AA-D9A4B9B8EA8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
