@@ -12,8 +12,7 @@ using System.Threading.Tasks;
 
 namespace MyGameIO.Api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [Route("api/Authentication")]
     public class AuthenticationController : ControllerBase
     {
 
@@ -30,7 +29,7 @@ namespace MyGameIO.Api.Controllers
 
 
         [HttpPost("register")]
-        public async Task<ActionResult> Registrar(RegisterUserViewModel registerUser)
+        public async Task<ActionResult> Registrar([FromBody]RegisterUserViewModel registerUser)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
 
@@ -52,7 +51,7 @@ namespace MyGameIO.Api.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult> Login(LoginUserViewModel loginUser)
+        public async Task<ActionResult> Login([FromBody] LoginUserViewModel loginUser)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
 
