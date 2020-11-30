@@ -1,5 +1,5 @@
-**/bin
-**/obj
-**/out
-**/.vs
-.dotnet
+bin/
+obj/
+out/
+.vs/
+.dotnet/
